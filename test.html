@@ -4,7 +4,7 @@
 
 
 <div>
-      <form name="inputForm" onsubmit="validateInput() & validateUserID() & dateDiff() & printX(); return false;">
+      <form name="inputForm" onsubmit="validateInput() & validateUserID() & dateDiff(); return false;">
         <label for="uid">User ID:</label><br>
         <input type="text" id="uid" name="uid" value=""><br>
         <label for ="fname">First Name:</label><br>
@@ -58,14 +58,7 @@
         let secondsdiff = Date.now() - dob.getTime()
         let daysdiff = Math.round(secondsdiff / (1000 * 3600 * 24))
 
-        if(daysdiff < (365*18)) {
-            document.getElementById("datetext").innerHTML =  'You are probably not old enough to take this class!'
-        } else {
-            document.getElementById("datetext").innerHTML = fname + ' ' + lname + ', You have been breathing for ' + daysdiff + ' days!'
-
-        }
-
-        
+        document.getElementById("datetext").innerHTML = fname + ' ' + lname + ', You have been breathing for ' + daysdiff + ' days!'
         console.log(daysdiff)
     }
 
@@ -74,7 +67,7 @@
         for(let i=0;i<=20;i++) {
             str = str.padStart(i,"x")
             console.log(str)
-            document.getElementById("printX").innerHTML = (str + "<br>") 
+            document.getElementById("printX").innerHTML = str
         }
         //document.getElementById("printX").innerHTML = str
     }
