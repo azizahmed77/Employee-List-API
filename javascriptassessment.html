@@ -18,12 +18,10 @@
 
 <script>
     let uid = document.getElementById("uid").value
-    
-    let lname = document.getElementById("lname").value
-    let birthday = document.getElementById("birthday").value
-   
+
+
     // put your JavaScript code to read HTML inputs
-      function validateInput() {
+    function validateInput() {
         let fname = document.getElementById("fname").value
         let lname = document.getElementById("lname").value
         let birthday = document.getElementById("birthday").value
@@ -31,22 +29,28 @@
         // and validate inputs here using if statements
         if (fname == "") {
             text = "Invalid First Name";
-        } else if(lname == "") {
+        } else if (lname == "") {
             text = "Invalid Last Name"
-        } else if(birthday == "") {
+        } else if (birthday == "") {
             text = "Invalid Birthday"
         }
         // and document.getElementById().innerHTML to display results
         document.getElementById("generatedText").innerHTML = text;
-        console.log(fname)
-        console.log(lname)
+        console.log(birthday);
     }
     // and validate inputs here using if statements
     // and document.getElementById().innerHTML to display results
     // write your JS functions here
+    function dateDiff() {
+        let birthday = document.getElementById("birthday").value
+        let dob = new Date(birthday)
+        let secondsdiff = Date.now() - dob.getTime()
+        let daysdiff = Math.round(secondsdiff / (1000 * 3600 * 24))
+        console.log(daysdiff)
+    }
     // write your JS Loop For here to print the Xs
     // use something like document.write(str.padStart(i,"x") + "<br>");
-        
+
 </script>
 
 </body>
