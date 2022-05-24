@@ -74,10 +74,11 @@
         for(let i=0;i<=20;i++) {
             str = str.padStart(i,"x")
             console.log(str)
-            document.getElementById("printX").innerHTML = (str + "<br>") 
+            document.getElementById("printX").innerHTML += str + '<br>'
         }
-        //document.getElementById("printX").innerHTML = str
-    }
+        //document.getElementById("printX").innerHTML += str + '<br>'
+    } 
+
 
     function validateUserID() {
         let uid = document.getElementById("uid").value
