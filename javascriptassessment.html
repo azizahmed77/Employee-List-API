@@ -17,17 +17,36 @@
 </div>
 
 <script>
-    // put your JavaScript code to read HTML inputs
     let uid = document.getElementById("uid").value
-    let fname = document.getElementById("fname").value
+    
     let lname = document.getElementById("lname").value
     let birthday = document.getElementById("birthday").value
+   
+    // put your JavaScript code to read HTML inputs
+      function validateInput() {
+        let fname = document.getElementById("fname").value
+        let lname = document.getElementById("lname").value
+        let birthday = document.getElementById("birthday").value
+        let text;
+        // and validate inputs here using if statements
+        if (fname == "") {
+            text = "Invalid First Name";
+        } else if(lname == "") {
+            text = "Invalid Last Name"
+        } else if(birthday == "") {
+            text = "Invalid Birthday"
+        }
+        // and document.getElementById().innerHTML to display results
+        document.getElementById("generatedText").innerHTML = text;
+        console.log(fname)
+        console.log(lname)
+    }
     // and validate inputs here using if statements
     // and document.getElementById().innerHTML to display results
     // write your JS functions here
     // write your JS Loop For here to print the Xs
     // use something like document.write(str.padStart(i,"x") + "<br>");
-    console.log(uid)
+        
 </script>
 
 </body>
